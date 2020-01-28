@@ -23,5 +23,17 @@ end
 
 # Part III
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  sumToN = false
+  if arr.size == 0
+    return sumToN
+  end
+  if arr.size == 1
+    return sumToN
+  end
+  if arr.combination(2).detect{|a,b| a + b == n} != nil
+    sumToN = true
+    return sumToN
+  else 
+  return sumToN
+  end
 end
