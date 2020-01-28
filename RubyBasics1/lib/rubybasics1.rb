@@ -10,7 +10,15 @@ end
 
 # Part II
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.size == 0
+    return 0
+  end
+  if arr.size == 1
+    return arr[0]
+  end
+   a = arr.sort
+   b = a[a.length-1] + a[a.length-2]
+  return b
 end
 
 # Part III
