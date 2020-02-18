@@ -7,7 +7,6 @@ end
 
 # Part II
 def starts_with_consonant? s
-  # YOUR CODE HERE
   start = s.chars[0]
   if s.empty?
     return false
@@ -20,5 +19,13 @@ end
 
 # Part III
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.empty? || s.match(/[^10]+/)
+    return false
+  elsif s.match(/00$/)
+    return true
+  elsif s == "0"
+    return true
+  else
+    return false
+  end
 end
