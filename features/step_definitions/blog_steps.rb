@@ -11,6 +11,5 @@ Then("I should be on the {string} page") do |string|
 end
 
 Then("I should see the {string} field") do |string|
-  # a change
   expect(page).to have_field(string)
 end
