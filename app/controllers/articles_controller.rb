@@ -42,6 +42,10 @@ class ArticlesController < ApplicationController
         
         redirect_to articles_path
     end
+    
+    def sort
+    
+    end
 end
 
 private
