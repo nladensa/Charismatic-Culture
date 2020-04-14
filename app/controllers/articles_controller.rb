@@ -13,10 +13,9 @@ class ArticlesController < ApplicationController
     
     def create
         @article = Article.new(article_params)
-        #byebug
+        @article.user = current_user
         
         if @article.save
-            #byebug
             redirect_to @article
         else
             render 'new'
@@ -41,10 +40,6 @@ class ArticlesController < ApplicationController
         @article.destroy
         
         redirect_to articles_path
-    end
-    
-    def sort
-    
     end
 end
 
