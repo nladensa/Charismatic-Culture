@@ -1,7 +1,6 @@
 <h1>Listing Articles</h1>
 
 <%= link_to 'New Article', new_article_path %>
-<%= link_to 'Login/Signup', root_url %>
 
 <table>
   <tr>
@@ -10,7 +9,7 @@
     <th>Author</th>
   </tr>
  
-  <% @articles.order("created_at desc").each do |article| %>
+  <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
