@@ -6,6 +6,9 @@ class ArticlesController < ApplicationController
             @parameter = params[:search].downcase
             @articles = Article.all.where("lower(text) LIKE :search", search: "%#{@parameter}%")
         end
+        if not params[:sort].blank?
+            @articles = @articles.order("created_at #{params[:sort]}")
+        end
     end
     
     def show
@@ -50,5 +53,5 @@ end
 
 private
     def article_params
-      params.require(:article).permit(:title, :text, :image, :search)
+      params.require(:article).permit(:title, :text, :image, :search, :sort)
     end

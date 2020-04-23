@@ -1,23 +1,4 @@
-<h1>Listing Articles</h1>
-
-<%= link_to 'New Article', new_article_path %>
-<<<<<<< HEAD
-<%= link_to 'Login/Signup', root_url %>
-=======
->>>>>>> c668a0f2ed3cbcd671bc0308ef0a18f214b57a6d
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Author</th>
-  </tr>
- 
-<<<<<<< HEAD
-  <% @articles.order("created_at desc").each do |article| %>
-=======
-  <% @articles.each do |article| %>
->>>>>>> c668a0f2ed3cbcd671bc0308ef0a18f214b57a6d
+<% @articles.order("created_at desc").each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
@@ -32,5 +13,3 @@
                                 method: :delete,
                                 data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  <% end %>
-</table>

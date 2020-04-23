@@ -8,6 +8,15 @@
     <%= text_field_tag(:search, params[:search]) %>
     <%= submit_tag ("Search") %>
   <% end %>
+  
+<h5>Sort by:</h5>
+  <%= form_tag(articles_path, method: :get) do %>
+    <%= radio_button_tag(:sort, "asc") %>
+    <%= label_tag(:sort_asc, "Oldest First") %>
+    <%= radio_button_tag(:sort, "desc") %>
+    <%= label_tag(:sort_desc, "Newest First") %>
+    <%= submit_tag ("Sort") %>
+  <% end %>
 
 <table>
   <tr>
@@ -16,20 +25,20 @@
     <th>Author</th>
   </tr>
  
-  <% @articles.order("created_at desc").each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><% if article.user %>
-            <%= article.user.name %>
-          <% end %>
-      </td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy',
-                                article_path(article),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+    <% @articles.order("created_at #{params[:sort]}").each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><% if article.user %>
+              <%= article.user.name %>
+            <% end %>
+        </td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy',
+                                  article_path(article),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
 </table>
