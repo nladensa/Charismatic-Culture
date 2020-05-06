@@ -19,11 +19,30 @@ textarea {
 }
 
 input[type=button], input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #228B22;
     float: right;
     border: none;
     color: white;
     padding: 16px 20px;
     text-decoration:none;
     cursor: pointer;
+}
+
+table, th, td {
+    border: 2px solid black;
+}
+
+table tr:nth-child(odd) {
+    background-color: #AF8DEB;
+}
+
+h4 {
+    font-size: 24px;
+    font-family: verdana;
+    color: #228B22;
+}
+
+p {
+    font-size: 18px;
+    font-family: verdana;
 }
