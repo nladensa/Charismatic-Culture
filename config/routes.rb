@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   resources :articles do
     resources :comments
+    resource :favorite, only: [:create, :destroy]
   end
   
   root 'welcome#index'
