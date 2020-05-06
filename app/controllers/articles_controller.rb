@@ -49,6 +49,10 @@ class ArticlesController < ApplicationController
         
         redirect_to articles_path
     end
+    
+    def favorite(article)
+       favorites.find_by(article_id: article.id).present? 
+    end
 end
 
 private
