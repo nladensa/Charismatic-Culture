@@ -5,7 +5,9 @@
 
 
 <body>
-    <%= image_tag(@article.image, width: '200px') if @article.image.attached? %>
+    <div style="width:400px; height:auto">
+    <%= link_to image_tag(@article.image, style: 'width:100%') if @article.image.attached? %>
+    </div>
 </body>
 
 <p>
