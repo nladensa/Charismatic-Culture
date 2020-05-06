@@ -9,20 +9,23 @@
     <%= submit_tag ("Search") %>
   <% end %>
   
-<h5>Sort by:</h5>
+<p>
+  <h4>Sort by:</h4>
   <%= form_tag(articles_path, method: :get) do %>
     <%= radio_button_tag(:sort, "asc") %>
     <%= label_tag(:sort_asc, "Oldest First") %>
     <%= radio_button_tag(:sort, "desc") %>
     <%= label_tag(:sort_desc, "Newest First") %>
-    <%= submit_tag ("Sort") %>
+    <%= submit_tag ("Sort") %><br>
   <% end %>
+</p>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
     <th>Author</th>
+    <th colspan="3">Actions</th>
   </tr>
  
     <% @articles.order("created_at #{params[:sort]}").each do |article| %>

@@ -4,9 +4,9 @@
 </p>
 
 
-<div style="width:200px; height:200px">
-    <%= image_tag(@article.image) if @article.image.attached? %>
-</div>
+<body>
+    <%= image_tag(@article.image, width: '200px') if @article.image.attached? %>
+</body>
 
 <p>
     <strong>Text:</strong>
