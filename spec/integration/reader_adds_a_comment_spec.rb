@@ -12,10 +12,10 @@ describe "the articles list" do
             expect(page).to have_content("Listing Articles")
             expect(page).to have_content(@articles[1].title)
             expect(page).to have_content(@articles[1].text)
+            find('tr', text: @articles[0].title).click_link("Show")
         end
     
         scenario "Reader successfully creates a new comment" do
-            visit '/articles/1'
             expect(page).to have_content(@articles[0].title)
             expect(page).to have_content(@articles[0].text)
             fill_in "Commenter", with: "Reader"

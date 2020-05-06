@@ -17,3 +17,11 @@
 body {
     margin: 50px;
 }
+
+table, th, td {
+    border: 2px solid black;
+}
+
+table tr:nth-child(odd) {
+    background-color: #AF8DEB;
+}

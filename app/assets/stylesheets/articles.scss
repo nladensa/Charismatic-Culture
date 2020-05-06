@@ -28,14 +28,6 @@ input[type=button], input[type=submit] {
     cursor: pointer;
 }
 
-table, th, td {
-    border: 2px solid black;
-}
-
-table tr:nth-child(odd) {
-    background-color: #AF8DEB;
-}
-
 h4 {
     font-size: 24px;
     font-family: verdana;

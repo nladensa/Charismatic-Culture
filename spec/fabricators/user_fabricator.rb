@@ -1,5 +1,5 @@
 Fabricator(:user) do
   name     "MyString"
-  email    "MyString"
-  password ""
+  email    "myemail@gmail.com"
+  password "qwertyuiop"
 end
