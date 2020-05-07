@@ -6,6 +6,10 @@ When("I click on the {string} link") do |string|
   click_link string
 end
 
+When("I click on the {string} button") do |string|
+  click_button string
+end
+
 Then("I should be on the {string} page") do |string|
   expect(page).to have_content(string)
 end
