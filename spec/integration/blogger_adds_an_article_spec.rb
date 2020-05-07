@@ -1,20 +1,9 @@
 require 'rails_helper.rb'
 
 describe "the users list" do
-    before(:all) do
-        @users = []
-        1.times{ @users << Fabricate(:user) }
-    end
+    let(:user) {Fabricate.build(:user)}
 
     feature "Blogger adds an article" do
-        scenario "Blogger successfully logs in" do
-            visit root_url
-            click_link "Login"
-            fill_in "Email", with: @users[0].email
-            fill_in "Password", with: @users[0].password
-            click_button "Login"
-        end
-    
         scenario "Blogger successfully navigates to the new articles page from the listing articles page" do
             visit articles_path
             expect(page).to have_content("Listing Articles")
@@ -25,6 +14,11 @@ describe "the users list" do
         end
     
         scenario "Blogger successfully creates a new article" do
+            visit root_url
+            click_link "Login"
+            fill_in "Email", with: user.email
+            fill_in "Password", with: user.password
+            click_button "Login"
             visit new_article_path
             expect(page).to have_content("New Article")
             fill_in "Title", with: "New Capybara Article"

@@ -1,5 +1,5 @@
 Fabricator(:user) do
-  name     "MyString"
-  email    "myemail@gmail.com"
+  name "#{Random.hex(4)}"
+  email { "#{:name}@example.com" }
   password "qwertyuiop"
 end
